@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies":
-  {
-    "express" : "*"
+  "dependencies": {
+    "aws-sdk": "^2.2.47",
+    "express": "*"
   },
   "repository": {
     "type": "git",
