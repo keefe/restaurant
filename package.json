@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "aws-sdk": "^2.2.47",
-    "express": "*"
+    "express": "*",
+    "body-parser":"*"
   },
   "repository": {
     "type": "git",
