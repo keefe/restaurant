@@ -1,0 +1,23 @@
+{
+  "name": "restaurant",
+  "version": "1.0.0",
+  "description": "This is a test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies":
+  {
+    "express" : "4.12.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keefe/restaurant.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/keefe/restaurant/issues"
+  },
+  "homepage": "https://github.com/keefe/restaurant#readme"
+}
