@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script
+			  src="https://code.jquery.com/jquery-2.2.2.js"
+			  integrity="sha256-4/zUCqiq0kqxhZIyp4G0Gk+AOtCJsY1TA00k5ClsZYE="
+			  crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#btnHello").click(function(){
+					var first = $("#txtHello").val();
+					request = {
+						firstName:first,
+						lastName:first
+					};
+          var success = function(data){
+						$("#divResults").append("<p>"+data.Hello+"</p>");
+					};
+          
+          $.ajax({
+            type: "POST",
+            url: "/testing",
+            data: JSON.stringify(request),
+            success: success,
+            dataType: "json",
+            contentType: "application/json"
+          });
+				});
+				$("#btnSubmit").click(function(){
+					var data = {};
+					data.firstName = $("#txtFirstName").val();
+					data.lastName = $("#txtLastName").val();
+					data.email = $("#txtEmail").val();
+					data.userMessage = $("#txtUserMessage").val();
+          var success = function(data){
+						$("#divResults").append("<p> Request Done"+JSON.stringify(data)+"</p>");
+					};
+          
+          $.ajax({
+            type: "POST",
+            url: "/dynamo",
+            data: JSON.stringify(data),
+            success: success,
+            dataType: "json",
+            contentType: "application/json"
+          });
+				});			
+			});
+
+		</script>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	</head>
+
+	<body>
+
+		<div id="divResults"/>
+
+		<div id="hello">
+		<input type="text" id="txtUserMessage"><br><br>
+		</div>
+
+		<div id="contact">
+		<input placeholder="First Name" type="text" id="txtFirstName"><br><br/>
+		<input placeholder="Last Name"type="text" id="txtLastName"><br><br/>
+		<input placeholder="Email" type="text" id="txtEmail"><br><br/>
+		<input type="button" id="btnSubmit" value="Contact Me!"/><br><br/>
+		<input placeholder="Hello Who?" type="text" id="txtHello"><br><br/>
+		<input type="button" id="btnHello" value="Say Hello!"/>
+    
+		</div>
+
+		<div id="socialmedia">
+			<ul>
+				<li><a href=""><i class="fa fa-linkedin"></i></a></li>
+				<li><a href=""><i class="fa fa-github"></i></a></li>
+
+			</ul>
+		</div>
+
+		</div>
+	</body>
+
+</html>

@@ -1,4 +1,5 @@
 var AWS = require('aws-sdk');
+AWS.config.update({region:'us-west-2'});
 
 module.exports = function(event, context) {
     var newItem = {
@@ -18,10 +19,10 @@ module.exports = function(event, context) {
         },
         TableName:'UserLeads'
     };
-    if(event.firstName!==undefined) newItem.Item.firstName.S = event.firstName;
-    if(event.lastName!==undefined) newItem.Item.lastName.S = event.lastName;
-    if(event.email!==undefined) newItem.Item.email.S = event.email;
-    if(event.userMessage!==undefined) newItem.Item.userMessage.S = event.userMessage;
+    if(event.firstName!==undefined && event.firstName !=='') newItem.Item.firstName.S = event.firstName;
+    if(event.lastName!==undefined && event.lastName !=='') newItem.Item.lastName.S = event.lastName;
+    if(event.email!==undefined && event.email!=='') newItem.Item.email.S = event.email;
+    if(event.userMessage!==undefined && event.userMessage!=='') newItem.Item.userMessage.S = event.userMessage;
     
     var dynamo = new AWS.DynamoDB({apiVersion: '2012-08-10'});
     dynamo.putItem(newItem, function(err, data){
