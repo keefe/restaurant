@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Google Chart</title>
+  
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+      <script type="text/javascript">
+      google.load('visualization', '1.0', {'packages':['corechart']});
+      google.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+      var qstr = window.location.search;
+       // alert(qstr);
+         
+        qstr=qstr.substring(1);
+        //alert(qstr);
+        var params = {};  
+        var arr = qstr.split('&');
+        for(var i=0; i<arr.length;i++){
+          var vals= arr[i].split('=');
+
+          params[vals[0]] = vals[1];
+        }
+          //alert(params.chse);
+        var arr = [
+                ['Mushrooms', 0]
+              /*  ['Onions', 1],
+                ['Olives', 1],
+                ['Zucchini', 1],
+                ['Pepperoni', 2]*/
+              ];
+        if(params.chse == '1') {
+          arr.push(['chese',1]);} 
+        else {
+          arr.push(['chese',0]);}
+
+        if(params.toma=='1') {
+          arr.push(['toma',1]);} 
+        else {
+          arr.push(['toma',0]);} 
+
+        if(params.Mari=='1') {
+          arr.push(['Mari',1]);} 
+        else {
+          arr.push(['Mari',0]);} 
+
+        if(params.bbq=='1') {
+          arr.push(['bbq',1]);} 
+        else {
+          arr.push(['bbq',0]);}
+
+        if(params.Garl=='1') {
+          arr.push(['Garl',1]);}
+        else {
+          arr.push(['Garl',0]);}
+
+        if(params.Srir=='1') {
+          arr.push(['Srir',1]);}
+        else {
+          arr.push(['Srir',0]);}
+
+        if(params.pep=='1') {
+          arr.push(['pep',1]);}
+        else {
+          arr.push(['pep',0]);}
+
+        if(params.ital=='1') {
+          arr.push(['ital',1]);}
+        else {
+          arr.push(['ital',0]);}
+
+        if(params.sital=='1') {
+          arr.push(['sital',1]);}
+        else {
+          arr.push(['sital',0]);}
+          
+        if(params.bef=='1') {
+          arr.push(['bef',1]);} 
+        else {
+          arr.push(['bef',0]);}
+
+        if(params.stak=='1') {
+          arr.push(['stak',1]);}
+        else {
+          arr.push(['stak',0]);}
+
+        if(params.ham=='1') {
+          arr.push(['ham',1]);}
+        else {
+          arr.push(['ham',0]);}
+
+        if(params.bac=='1') {
+          arr.push(['bac',1]);}
+        else {
+          arr.push(['bac',0]);}
+
+        if(params.sal=='1') {
+          arr.push(['sal',1]);}
+        else {
+          arr.push(['sal',0]);}
+
+        if(params.chck=='1'){
+          arr.push(['chck',1]);}
+        else {
+          arr.push(['chck',0]);}
+
+        if(params.ched=='1') {
+          arr.push(['ched',1]);}
+        else {
+          arr.push(['ched',0]);}
+
+        if(params.fet=='1') {
+          arr.push(['fet',1]);} 
+        else {
+          arr.push(['fet',0]);}
+
+        if(params.asi=='1') {
+          arr.push(['asi',1]);}
+        else {
+          arr.push(['asi',0]);}
+
+        if(params.pro=='1'){
+          arr.push(['pro',1]);}
+        else {
+          arr.push(['pro',0]);}
+
+        if(params.Peppe=='1') {
+          arr.push(['Peppe',1]);}
+        else {
+          arr.push(['Peppe',0]);}
+
+        if(params.Oli=='1') {
+          arr.push(['Oli',1]);}
+        else {
+          arr.push(['Oli',0]);}
+
+        if(params.Garlic=='1') {
+            arr.push(['Garlic',1]);}
+        else {
+            arr.push(['Garlic',0]);}
+
+        if(params.Jala=='1') {
+            arr.push(['Jala',1]);}
+        else {
+            arr.push(['Jala',0]);}
+
+        if(params.Mush=='1') {
+            arr.push(['Mush',1]);} 
+        else {
+            arr.push(['Mush',0]);}
+        
+        if(params.Pine=='1') {
+            arr.push(['Pine',1]);}
+        else {
+            arr.push(['Pine',0]);}
+
+        if(params.Oni=='1') {  
+            arr.push(['Oni',1]);} 
+        else {
+            arr.push(['Oni',0]);}
+
+        if(params.red=='1') {
+            arr.push(['red',1]);}
+        else {
+            arr.push(['red',0]);}
+        
+        if(params.Spi=='1'){
+            arr.push(['Spi',1]);}
+        else {
+            arr.push(['Spi',0]);}
+
+        if(params.Tomat=='1'){
+            arr.push(['Tomat',1]);}
+        else {
+            arr.push(['Tomat',0]);}
+        
+        if(params.Dic=='1'){
+             arr.push(['Dic',1]);}
+        else {
+            arr.push(['Dic',0]);}
+
+        if(params.hot=='1'){
+                arrpush(['hot',1]);} 
+        else {
+            arr.push(['hot',0]);}
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows(arr);
+
+        // Set chart options
+        var options = {'title':'Pizza-Piechart',
+                       'width':500,
+                       'height':500};
+
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+        var options = {
+          title: 'Pizza-Donut chart',
+          pieHole: 0.5,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
+<style> 
+
+.dinline{display:inline;}
+</style>
+</head>
+<body>
+  <form action="pizza.html" method="get">
+    <center><h1> <font color="#483D8B" face="Algerian"><em> BUILD YOUR OWN PIZZA </font></em></h1>
+      
+            <input type="button"  class="btn-block btn-danger btn-lg" value="DASHBOARD" ><br/><br/>
+          <div class = "container">
+            <table>
+              <tr>
+                <td>
+           <div id="chart_div" class="col-md-6" ></div></td>
+           <td><div id="donutchart" class = "col-md-6" style="width: 500px; height: 500px;"></div></td>
+           </tr>
+         </table>
+         <div align="center"> 
+             <input type="submit"  style="background-color: #d9534f;" class="btn btn-warning btn-lg " value="HOME" >
+           </div>
+          </div>
+</form>
+</body>
+</html>

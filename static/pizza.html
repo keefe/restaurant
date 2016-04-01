@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="./bootstrap-3.3.4-dist/css/bootstrap.min.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<link href="./bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet" />
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	
+    <title>Build Your Pizza</title>
+    
+    <!-- overall content alignment -->  
+    <style>
+    body { background-color: #FFFFFF;}
+        
+	h1 {text-align: center;}
+        
+	.center { 
+        margin-left: auto; 
+        margin-right: auto;}
+        
+    #form span {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 40px;}
+
+    .centeral {
+        text-align: center;
+    }
+	</style>
+    
+      
+      
+    <!-- toggle between each of the three builing steps -->
+	<script type="text/javascript">
+	
+	    $(document).ready(function()
+			{
+	               	$('#button1').click(
+	                    function()
+				{
+						document.getElementById("btn1").setAttribute("class","btn btn-primary"); 
+						document.getElementById("btn2").setAttribute("class","btn btn-primary"); 
+	                        $('#size-and-crust').toggle();
+	                        $('#cheese-and-sauce').css({'display':'none'});
+	                        $('#toppings').css({'display':'none'});
+	                        });
+
+	                $('#button2').click(
+	                    function()
+	            {
+	            			 document.getElementById("btn1").setAttribute("class","btn btn-danger"); 
+	            			 document.getElementById("btn2").setAttribute("class","btn btn-primary");  
+	                        $('#size-and-crust').css({'display':'none'});
+	                        $('#cheese-and-sauce').toggle();
+	                        $('#toppings').css({'display':'none'});
+
+	                        });
+	                $('#button3').click(
+	                    function()
+	            {
+	            			document.getElementById("btn2").setAttribute("class","btn btn-danger");  
+	                        $('#cheese-and-sauce').css({'display':'none'});
+	                        $('#toppings').toggle(); 
+	                        $('#size-and-crust').css({'display':'none'});
+	                        });
+	            });
+	</script>
+      
+      
+      
+    <!-- check boxes for choices -->  
+	<script>
+		function chckbx(){
+			//alert("i am here"); 
+			if(document.getElementById('CHEESE').checked)
+		    {
+		    //	alert("chese checked");
+		    document.getElementById('chse').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('chse').value = 0;
+		    }
+
+		    if(document.getElementById('tomatos').checked)
+		    {
+		    document.getElementById('toma').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('toma').value = 0;
+		    }
+
+		    if(document.getElementById('Marinara').checked)
+		    {
+		    document.getElementById('Mari').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('Mari').value = 0;
+		    }
+
+		    if(document.getElementById('BBQ').checked)
+		    {
+		    document.getElementById('bbq').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('bbq').value = 0;
+		    }
+
+		    if(document.getElementById('GarlicP').checked)
+		    {
+		    document.getElementById('Garl').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('Garl').value = 0;
+		    }
+
+		    if(document.getElementById('Sriracha').checked)
+		    {
+		    document.getElementById('Srir').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('Srir').value = 0;
+		    }
+
+		    if(document.getElementById('pepperoni').checked)
+		    {
+		    document.getElementById('pep').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('pep').value = 0;
+		    }
+
+		    if(document.getElementById('italian').checked)
+		    {
+		    document.getElementById('ital').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('ital').value = 0;
+		    }
+
+		    if(document.getElementById('sliceditalian').checked)
+		    {
+		    document.getElementById('sital').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('sital').value = 0;
+		    }
+
+		    if(document.getElementById('beef').checked)
+		    {
+		    document.getElementById('bef').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('bef').value = 0;
+		    }
+
+		    if(document.getElementById('steak').checked)
+		    {
+		    document.getElementById('stak').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('stak').value = 0;
+		    }
+
+		    if(document.getElementById('ham').checked)
+		    {
+		    document.getElementById('ham').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('ham').value = 0;
+		    }
+
+		    if(document.getElementById('bacon').checked)
+		    {
+		    document.getElementById('bac').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('bac').value = 0;
+		    }
+
+		    if(document.getElementById('salami').checked)
+		    {
+		    document.getElementById('sal').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('sal').value = 0;
+		    }
+
+		    if(document.getElementById('chicken').checked)
+		    {
+		    document.getElementById('chck').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('chck').value = 0;
+		    }
+		    if(document.getElementById('cheddar').checked)
+		    {
+		    document.getElementById('ched').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('ched').value = 0;
+		    }
+		    if(document.getElementById('feta').checked)
+		    {
+		    document.getElementById('fet').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('fet').value = 0;
+		    }
+		    if(document.getElementById('asiago').checked)
+		    {
+		    document.getElementById('asi').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('asi').value = 0;
+		    }
+		    if(document.getElementById('provo').checked)
+		    {
+		    document.getElementById('pro').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('pro').value = 0;
+		    }
+		    if(document.getElementById('Peppers').checked)
+		    {
+		    document.getElementById('Peppe').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('Peppe').value = 0;
+		    }
+		    if(document.getElementById('Olives').checked)
+		    {
+		    document.getElementById('Oli').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('Oli').value = 0;
+		    }
+		    if(document.getElementById('Garlic').checked)
+		    {
+		    document.getElementById('Garlic').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('Garlic').value = 0;
+		    }
+		    if(document.getElementById('Green').checked)
+		    {
+		    document.getElementById('green').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('green').value = 0;
+		    }
+		    if(document.getElementById('Jalapeno').checked)
+		    {
+		    document.getElementById('Jala').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('Jala').value = 0;
+		    }
+		    if(document.getElementById('Mushrooms').checked)
+		    {
+		    document.getElementById('Mush').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('Mush').value = 0;
+		    }
+		    if(document.getElementById('Pineapple').checked)
+		    {
+		    document.getElementById('Pine').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('Pine').value = 0;
+		    }
+		    if(document.getElementById('Onions').checked)
+		    {
+		    document.getElementById('Oni').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('Oni').value = 0;
+		    }
+		    if(document.getElementById('Red').checked)
+		    {
+		    document.getElementById('red').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('red').value = 0;
+		    }
+		    if(document.getElementById('Spinach').checked)
+		    {
+		    document.getElementById('Spi').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('Spi').value = 0;
+		    }
+		    if(document.getElementById('Tomatoes').checked)
+		    {
+		    document.getElementById('Tomat').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('Tomat').value = 0;
+		    }
+		    if(document.getElementById('Diced').checked)
+		    {
+		    document.getElementById('Dic').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('Dic').value = 0;
+		    }
+		    
+		    if(document.getElementById('Hot').checked)
+		    {
+		    document.getElementById('hot').value = 1;
+		    }
+		    else
+		    {
+		       document.getElementById('hot').value = 0;
+		    }
+		    
+			}
+
+	</script>
+	
+    <body>
+	
+        <h1> <font color="#483D8B" face="Algerian"><em>BUILD YOUR OWN PIZZA</font></em></h1>
+		
+        <!-- three div's building process -->
+        <div class="container">
+            <div class="jumbotron" style="background-color: rgb(255, 255, 255);
+            border-radius: 10px;padding-top: 4px;padding-bottom: 4px;padding-left: 5px;padding-right: 5px;">
+            
+            <!-- link to chart.html to generate pie chart after completing three step process -->	
+            <form action="chart.html" method="get">
+					<div class="btn-group btn-group-justified" role="group" aria-label="...">
+					    <div id="button1" class="btn-group" role="group">
+							<button type="button" class="btn btn-danger" style="padding-bottom: 0px; height: 50px; border-radius: 10px; font-size: 20px;"><font face="Algerian"><em>SIZE AND CRUST </font></em></button>
+						</div>
+						<div id="button2" class="btn-group" role="group">
+						    <button type="button" class="btn btn-primary" id="btn1" style="padding-bottom: 0px; height: 50px; border-radius: 10px; font-size: 20px;"> <font face="Algerian"><em>CHEESE &amp; SAUCE</font></em></button>
+						</div>
+						<div id="button3" class="btn-group" role="group">
+						    <button type="button" class="btn btn-primary" id="btn2" style="padding-bottom: 0px;height: 50px; border-radius: 10px; font-size: 20px;"> <font face="Algerian"><em>TOPPINGS</font></em></button>
+						</div>
+				</div><!-- /.btn-group btn-group-justified -->
+			</div><!-- /.jumbo -->
+
+            <div id="size-and-crust" style="display:visible;">
+                <div class="row vertical-divider" style=" padding-top: 0px;">
+                    <div class="container" style="margin-bottom: -50px;">
+                        <div class="jumbotron" style="background-color: white;padding-top: 0px;">
+                            <h1><font size="5" face="Algerian" color="#483D8B">CHOOSE SIZE AND CRUST </font></h1>
+                            <div class="row">
+	                           <hr>
+                            </div>
+                            <!-- first row HAND TOSSED -->
+                            <div class="row" style="margin-left: -10px;">
+	                        <div class="col-md-3" style="width: 20%;">
+	                            <div class="span3" style="padding-right:20px; border-right: 1px solid #ccc;background-color: rgb(187, 177, 234); border-radius: 10px;">
+	                                <h2><font size="3" face="Algerian" color="#483D8B">HAND TOSSED</font></h2>
+	                                <br><font size="2" face= "verdana">Garlic-Seasoned Crust with a rich,buttery taste</font>
+	                                <br>
+	                                <input type="radio" name="size" value="small" /> SMALL(10")<br />
+	                                <input type="radio" name="size" value="medium" /> MEDIUM(12")<br />
+	                                <input type="radio" name="size" value="large" /> LARGE(14")<br />
+	                                <input type="radio" name="size" value="xl" /> X-LARGE(16")<br />
+	                            </div>
+	                        </div>
+                            <!-- second row HANDMADE PAN -->
+	                        <div class="col-md-3" style="width: 20%;">
+	                            <div class="span3" style="padding-right:20px; border-right: 1px solid #ccc;background-color: rgb(187, 177, 234); border-radius: 10px;">
+	                                <h2><font size="3" face="Algerian" color="#483D8B"> HANDMADE PAN</font></h2>
+	                                <br><font size="2" face= "verdana">Two layers of cheese, toppings to te edge, and a crust that bakes up golden and crispy with a buttery taste</font>
+	                                <br>
+	                                <br>
+	                                <input type="radio" name="size" value="medium" /> MEDIUM(12")<br />
+	                            </div>
+	                        </div>
+                            <!-- third row CRUNCHY THIN CRUST -->
+	                        <div class="col-md-3" style="width: 20%;">
+	                            <div class="span3" style="padding-right:20px; border-right: 1px solid #ccc;background-color: rgb(187, 177, 234); border-radius: 10px;">
+	                                <h2><font size="3" face="Algerian" color="#483D8B">CRUNCHY THIN CRUST</font></h2>
+	                                <br><font size="2" face= "verdana">Thin enough for the optimum crispy to crunchy ratio.</font>
+	                                <br>
+	                                <br>
+	                                <input type="radio" name="size" value="medium" /> MEDIUM(12")<br />
+	                                <br>
+	                                <input type="radio" name="size" value="large" /> LARGE(14")<br />
+	                            </div>
+	                        </div>
+                            <!-- fourth row BROKLYN STYLE -->
+	                        <div class="col-md-3" style="width: 20%;">
+	                            <div class="span3" style="padding-right:20px; border-right: 1px solid #ccc;background-color: rgb(187, 177, 234); border-radius: 10px;">
+	                                <h2><font size="3" face="Algerian" color="#483D8B"> BROOKLYN STYLE</font></h2>
+	                                <br><font size="2" face= "verdana">Hand stretched to be big, thin, and perfectly foldable</font>
+	                                <br>
+	                                <br>    
+	                                <input type="radio" name="size" value="large" /> LARGE(14")<br />
+	                                <br>
+	                                <input type="radio" name="size" value="xl" /> X-LARGE(16")<br />
+	                            </div>
+	                        </div>
+                            <!-- fifth row GLUTEN FREE CRUST -->
+	                        <div class="col-md-3" style="width: 20%;">
+	                            <div class="span3" style="padding-right:20px; border-right: 1px solid #ccc;background-color: rgb(187, 177, 234); border-radius: 10px;">    
+	                                <h2><font size="3" face="Algerian" color="#483D8B">GLUTEN FREE CRUST</font></h2>
+	                                <br><font size="2" face= "verdana">Domino's pizza made with a Gluten Free Crust</font>
+	                                <br>
+	                                <br>
+	                                <input type="radio" name="size" value="small" /> SMALL(10")<br />
+	                            </div>
+	                        </div><!-- last /.col-md-3 -->
+	                    </div><!-- /.row -->
+	                </div><!-- /.jumbo -->
+	            </div><!-- /.container -->
+	        </div><!-- /.row vertical-divider -->
+	    </div><!-- /#size-and-crust -->
+	</div><!-- /.container -->
+	<div id="cheese-and-sauce" style="display:none;">
+        <div class="row vertical-divider" style="padding-top: 0px;">
+			<div class="container" style="margin-bottom: -50px;">
+				<div class="jumbotron" style="background-color: white;padding-top: 0px; ">
+					<h1><font size="5" face="Algerian" color="#483D8B">CHOOSE CHEESE and SAUCE</font></h1>
+				    <div class="row">
+				        <hr>
+				    </div>
+				    <!-- first row CHEESE? -->
+                    <div class="row" style="margin-right: -200px;padding-left: 300px;">
+        				<div class="col-md-3">
+        					<div class="span3" style="padding-right:20px; border-right: 1px solid #ccc;background-color: rgb(187, 177, 234); border-radius: 10px;">
+				        	    <h2><font size="3" face="verdana" color="#483D8B"> CHEESE?</font></h2>
+								<br>
+								<br>
+								<input type="checkbox" class="css-checkbox" name="CHEESE" id="CHEESE" value=0/> CHEESE</br>
+							</div>
+					    </div>
+                        <!-- second row CHOOSE SAUCE -->
+					    <div class="col-md-3">
+					       	<div class="span3" style="padding-right:20px; border-right: 1px solid #ccc;background-color: rgb(187, 177, 234); border-radius: 10px;">
+					            <h2><font size="3" face="verdana" color="#483D8B">CHOOSE SAUCE</font></h2>
+								<br>
+								<br>
+								<input type="checkbox" class="css-checkbox" id="tomatos" value=0/> Robust Tomato Sauce</br>
+								<input type="checkbox" class="css-checkbox" id="Marinara" value=0/> Hearty Marinara Sauce</br>
+								<input type="checkbox" class="css-checkbox" id="BBQ" value=0/> BBQ Sauce</br>
+								<input type="checkbox" class="css-checkbox" id="GarlicP" value=0/> Garlic Parmesan Sauce</br>
+								<input type="checkbox" class="css-checkbox" id="Sriracha" value=0/> Spicy Sriracha Sauce</br>
+                            </div><!-- /.span3 -->
+                        </div><!-- col-md-3 -->
+                    </div><!-- /.row -->
+                </div><!-- /.jumbotron -->
+            </div><!-- /.container -->
+        </div><!-- /.row vertical-divider -->
+	</div><!-- /#cheese-and-sauce -->
+
+	<div id="toppings" style="display:none;">
+		<div class="row vertical-divider" style="padding-top: 0px;">
+			<div class="container" style="margin-bottom: -50px;">
+				<div class="jumbotron" style="background-color: white;padding-top: 0px;">	
+					<h1><font size="5" face="Algerian" color="#483D8B">CHOOSE TOPPINGS</font></h1>
+				    <div class="row">
+				        <hr>
+				    </div>
+				    <div class="row">
+                        <!-- first row CHOOSE MEAT -->
+        				<div class="col-md-6">
+        					<div class="span3" style="padding-right:20px; border-right: 1px solid #ccc;background-color: rgb(187, 177, 234); border-radius: 10px;">
+				        	    <h2><font size="3" face="verdana" color="#483D8B">CHOOSE MEAT</font></h2>
+								<br>
+								<br>
+								<input type="checkbox" class="css-checkbox" id="pepperoni" value=0 />Pepperoni<br />
+								<br>
+								<input type="checkbox" class="css-checkbox"  id="italian" value=0/>Italian Sausage<br />
+								<br>
+								<input type="checkbox" class="css-checkbox" id="sliceditalian"value=0 />Sliced Italian Sausage<br />
+								<br>
+								<input type="checkbox" class="css-checkbox" id="beef" value=0 />Beef<br />
+								<br>
+								<input type="checkbox" class="css-checkbox" id="steak" value=0 />Philly Steak<br />
+								<br>
+								<input type="checkbox" class="css-checkbox" id="ham" value=0 />Ham<br />
+								<br>
+								<input type="checkbox" class="css-checkbox" id="bacon" value=0 />Bacon<br />
+								<br>
+								<input type="checkbox" class="css-checkbox" id="salami" value=0 />Salami<br />
+								<br>
+								<input type="checkbox" class="css-checkbox" id="chicken" value=0 />Chicken<br />
+							</div>
+					    </div>
+                        <!-- second row CHOOSE NON MEATS -->
+					    <div class="col-md-6">
+					       	<div class="span3" style="padding-right:20px; border-right: 1px solid #ccc;background-color: rgb(187, 177, 234); border-radius: 10px;">
+					            <h2><font size="3" face="verdana" color="#483D8B">CHOOSE NON MEATS</font></h2>
+								<br>
+								<br>
+								<input type="checkbox" class="css-checkbox" id="cheddar" value=0 />Cheddar Cheese<br />
+								<br>
+								<input type="checkbox" class="css-checkbox" id="feta" value=0 />Feta Cheese<br />
+								<br>
+								<input type="checkbox" class="css-checkbox" id="asiago" value=0 />Shredded Parmesan Asiago<br />
+								<br>
+								<input type="checkbox" class="css-checkbox" id="provo" value=0 />Shredded Provolone Cheese<br />
+								<br>
+								<input type="checkbox" class="css-checkbox" id="Peppers" value=0 /> Banana Peppers<br />
+								<br>
+								<input type="checkbox" class="css-checkbox" id="Olives" value=0 />Black Olives<br />
+								<br>
+								<input type="checkbox" class="css-checkbox" id="Garlic" value=0 />Garlic<br />
+								<br>
+								<input type="checkbox" class="css-checkbox" id="Green" value=0 />Green Peppers<br />
+								<br>
+								<input type="checkbox" class="css-checkbox" id="Jalapeno" value=0 />Jalapeno Peppers<br />
+								<br>
+								<input type="checkbox" class="css-checkbox" id="Mushrooms" value=0 />Mushrooms<br />
+								<br>
+								<input type="checkbox" class="css-checkbox" id="Pineapple" value=0 />Pineapple<br />
+								<br>
+								<input type="checkbox" class="css-checkbox" id="Onions" value=0 />Onions<br />
+								<br>
+								<input type="checkbox" class="css-checkbox" id="Red" value=0 />Roasted Red Peppers<br />
+								<br>
+								<input type="checkbox" class="css-checkbox" id="Spinach" value=0 />Spinach<br />
+								<br>
+								<input type="checkbox" class="css-checkbox" id="Tomatoes" value=0 />Tomatoes<br />
+								<br>
+								<input type="checkbox" class="css-checkbox" id="Diced" value=0 />Diced Tomatoes<br />
+								<br>
+								<input type="checkbox" class="css-checkbox" id="Hot" value=0 />Hot Sauce<br />
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>			
+	
+    <!-- list of ingredients starting off with zero value; checking it will increment -->
+	<input type="hidden" id="chse" name="chse" value=0 />
+	<input type="hidden" id="toma" name="toma" value=0 />
+	<input type="hidden" id="Mari" name="Mari" value=0 />
+	<input type="hidden" id="bbq" name="bbq" value=0 />
+	<input type="hidden" id="Garl" name="Garl" value=0 />
+	<input type="hidden" id="Srir" name="Srir" value=0 />
+	<input type="hidden" id="pep" name="pep" value=0 />
+	<input type="hidden" id="ital" name="ital" value=0 />
+	<input type="hidden" id="sital" name="sital" value=0 />
+	<input type="hidden" id="bef" name="bef" value=0 />
+	<input type="hidden" id="stak" name="stak" value=0 />
+	<input type="hidden" id="ham" name="ham" value=0 />
+	<input type="hidden" id="bac" name="bac" value=0 />
+	<input type="hidden" id="sal" name="sal" value=0 />
+	<input type="hidden" id="chck" name="chck" value=0 />
+	<input type="hidden" id="ched" name="ched" value=0 />
+	<input type="hidden" id="fet" name="fet" value=0 />
+	<input type="hidden" id="asi" name="asi" value=0 />
+	<input type="hidden" id="pro" name="pro" value=0 />
+	<input type="hidden" id="Peppe" name="Peppe" value=0 />
+	<input type="hidden" id="Oli" name="Oli" value=0 />
+	<input type="hidden" id="Garlic" name="Garlic" value=0 />
+	<input type="hidden" id="green" name="green" value=0 />
+	<input type="hidden" id="Jala" name="Jala" value=0 />
+	<input type="hidden" id="Mush" name="Mush" value=0 />
+	<input type="hidden" id="Pine" name="Pine" value=0 />
+	<input type="hidden" id="Oni" name="Oni" value=0 />
+	<input type="hidden" id="red" name="red" value=0 />
+	<input type="hidden" id="Spi" name="Spi" value=0 />
+	<input type="hidden" id="Tomat" name="Tomat" value=0 />
+	<input type="hidden" id="Dic" name="Dic" value=0 />
+	<input type="hidden" id="hot" name="hot" value=0 />
+	
+    
+	<div align="center">
+    <!-- BUILD button -->
+	<input type="submit" style="background-color: #d9534f;"  class="btn btn-warning btn-lg " value="BUILD" onclick="chckbx()">
+    <!-- CANCEL button -->        
+    <input type="reset" class="btn btn-warning btn-lg" style="background-color: #d9534f;" name="cancel" value="CANCEL">
+</div>
+</form>
+	</body>
+</head>
+</html>

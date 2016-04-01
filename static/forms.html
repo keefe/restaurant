@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>INT222 - Assignment #2 - forms.html</title>
+  <link rel="stylesheet" type="text/css" href="css/reset.css" />
+  <link rel="stylesheet" type="text/css" href="css/mycss.css" />
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="../">Zenit Account</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Photo Gallery</a></li>
+      <li><a href="video.html">Video</a></li>
+      <li><a href="audio.html">Audio</a></li>
+      <li><a href="html5.html">HTML5</a></li>
+      <li><a class="current" href="forms.html">Forms</a></li>
+      <li><a href="other.html">Other</a></li>
+      <li><a href="css">CSS Used</a></li>
+    </ul>
+  </nav>
+  <h2 class="forms">Forms - will be used in Assignment #3</h2>
+  <form method="post" name="forms"
+        action="index.html">
+    <div class="forms">
+      <div class="cell1">
+        <h3>Mama's<br />Pizza</h3>
+        <hr />
+        <p>416 or 905</p>
+        <p>222-6262</p>
+        <hr />
+        <table>
+          <tr>
+            <td>Small</td>
+            <td>$11.55</td>
+          </tr>
+          <tr>
+            <td>Medium</td>
+            <td>$15.25</td>
+          </tr>
+          <tr>
+            <td>Large</td>
+            <td>$22.00</td>
+          </tr>
+          <tr>
+            <td>X-Large</td>
+            <td>$25.00</td>
+          </tr>
+          <tr>
+            <td colspan="2">Toppings</td>
+          </tr>
+          <tr>
+            <td>$1.79</td>
+            <td>Each</td>
+          </tr>
+          <tr>
+            <td colspan="2">Plus 13% HST</td>
+          </tr>
+          <tr>
+            <td colspan="2">Free Delivery</td>
+          </tr>
+        </table>
+        Your Price<br />
+        <input name="price" size="8" readonly="readonly" />
+      </div>
+      <div class="forms2">
+        <fieldset>
+          <legend>Personal Information</legend>
+          Name <input name="name" /><br />
+          Account No. <input type="number" name="account" /><br />
+          Phone No. <input type="tel" name="phone" /><br />
+          Date of Birth <input type="date" name="birthday" />
+        </fieldset>
+        <fieldset>
+          <legend>Pizza size &amp; Crust</legend>
+          <select name="size" size="2">
+            <option>Select Pizza Size</option>
+            <option value="1">Small</option>
+            <option value="2">Medium</option>
+            <option value="3">Large</option>
+            <option value="4">X-Large</option>
+          </select>
+          <select name="crust" size="2">
+            <option value="1">Regular Crust</option>
+            <option value="2">Thin Crust</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <legend>Cheeses</legend>
+          <input type="radio" name="cheese" value="1" />Mozzarella
+          <input type="radio" name="cheese" value="2" />Reduced Fat
+          <input type="radio" name="cheese" value="3" />Feta
+        </fieldset>
+        <fieldset>
+          <legend>Sauces</legend>
+          <input type="radio" name="sauce" value="1" />Pizza Sauce
+          <input type="radio" name="sauce" value="2" />BBQ Sauce
+          <input type="radio" name="sauce" value="3" />Garlic Sauce
+        </fieldset>
+        <fieldset>
+          <legend>Special Instructions</legend>
+          <textarea name="instructions" rows="3" cols="42"></textarea>
+        </fieldset>
+        <input type="submit" value="PLACE YOUR ORDER" />
+        <input type="reset" value="START OVER" />
+      </div>
+      <div class="forms2">
+        <fieldset>
+          <legend>Choose Toppings - $1.79 Each</legend>
+          <div class="forms2">
+            <input type="checkbox" name="topping" value="1" /> Anchovies<br />
+            <input type="checkbox" name="topping" value="2" /> Bacon<br />
+            <input type="checkbox" name="topping" value="3" /> Ham<br />
+            <input type="checkbox" name="topping" value="4" /> Pepperoni<br />
+            <input type="checkbox" name="topping" value="5" /> Salami<br />
+            <input type="checkbox" name="topping" value="6" /> Sausage<br />
+          </div>
+          <div class="forms2">
+            <input type="checkbox" name="topping" value="7" /> Broccoli<br />
+            <input type="checkbox" name="topping" value="8" /> Green Olives<br />
+            <input type="checkbox" name="topping" value="9" /> Green Peppers<br />
+            <input type="checkbox" name="topping" value="10" /> Mushrooms<br />
+            <input type="checkbox" name="topping" value="11" /> Red Onions<br />
+            <input type="checkbox" name="topping" value="12" /> Roasted Garlic<br />
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </form>
+  <footer>
+    <section>
+      <script type="text/javascript">
+        //<![CDATA[
+          var dt=new Date(document.lastModified); // Get document last modified date
+          document.write('<p>This page was last updated on '+dt.toLocaleString()) + '</p>';
+        //]]>
+      </script>
+    </section>
+  </footer>
+</body>
+
+</html>
