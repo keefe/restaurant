@@ -16,7 +16,7 @@
               data.hasCheese = $('#chkCheese').is(":checked")
               data.hasMushrooms = $('#chkMushrooms').is(":checked")
               data.hasPepperoni = $('#chkPepperoni').is(":checked")
-
+              console.log(data);
               var success = function(data){
     						$("#inputs").append("<p> Request Done"+JSON.stringify(data)+"</p>");
     					};
@@ -30,7 +30,7 @@
                 contentType: "application/json"
               });
     				});		
-          }
+          });
         </script>
 </head>
 <html>
