@@ -16,13 +16,13 @@ module.exports = function(event, context) {
           userMessage:{
               S:"Test Message"
           },
-          hasCheese:{
+          hasTraditional:{
             BOOL:false
           },
-          hasMushrooms:{
+          hasThin:{
             BOOL:false
           },
-          hasPepperoni:{
+          hasGlutenFree:{
             BOOL:false
           }
         },
@@ -32,9 +32,9 @@ module.exports = function(event, context) {
     if(event.lastName!==undefined && event.lastName !=='') newItem.Item.lastName.S = event.lastName;
     if(event.email!==undefined && event.email!=='') newItem.Item.cust_data.S = event.email;
     if(event.userMessage!==undefined && event.userMessage!=='') newItem.Item.userMessage.S = event.userMessage;
-    if(event.hasCheese!==undefined && event.hasCheese !=='') newItem.Item.hasCheese.BOOL = event.hasCheese;
-    if(event.hasMushrooms!==undefined && event.hasMushrooms !=='') newItem.Item.hasMushrooms.BOOL = event.hasMushrooms;
-    if(event.hasPepperoni!==undefined && event.hasPepperoni !=='') newItem.Item.hasPepperoni.BOOL = event.hasPepperoni;
+    if(event.hasTraditional!==undefined && event.hasTraditional !=='') newItem.Item.hasTraditional.BOOL = event.hasTraditional;
+    if(event.hasThin!==undefined && event.hasThin !=='') newItem.Item.hasThin.BOOL = event.hasThin;
+    if(event.hasGlutenFree!==undefined && event.hasGlutenFree !=='') newItem.Item.hasGlutenFree.BOOL = event.hasGlutenFree;
     
     var dynamo = new AWS.DynamoDB({apiVersion: '2012-08-10'});
     dynamo.putItem(newItem, function(err, data){

@@ -13,10 +13,30 @@
     					data.lastName = $("#txtLastName").val();
     					data.email = $("#txtEmail").val();
     					data.userMessage = $("#txtComments").val();
-              data.hasCheese = $('#chkCheese').is(":checked")
-              data.hasMushrooms = $('#chkMushrooms').is(":checked")
+              data.hasTraditional = $('#chkTraditional').is(":checked")
+              data.hasThin = $('#chkThin').is(":checked")
+              data.hasGlutenFree = $('#chkGlutenFree').is(":checked")
+              data.hasClassicRed = $('#chkClassicRed').is(":checked")
+              data.hasCreamyGarlicWhite = $('#chkCreamyGarlicWhite').is(":checked")
+              data.hasExtraCheese = $('#chkExtraCheese').is(":checked")
+              data.hasRegularCheese = $('#chkRegularCheese').is(":checked")
+              data.hasNoCheese = $('#chkNoCheese').is(":checked")
               data.hasPepperoni = $('#chkPepperoni').is(":checked")
-              console.log(data);
+              data.hasItalianSausage = $('#chkItalianSausage').is(":checked")
+              data.hasHam = $('#chkHam').is(":checked")
+              data.hasSalami = $('#chkSalami').is(":checked")
+              data.hasBeef = $('#chkBeef').is(":checked")
+              data.hasBacon = $('#chkBacon').is(":checked")
+              data.hasChicken = $('#chkChicken').is(":checked")
+              data.hasCanadianBacon = $('#chkCandianBacon').is(":checked")
+              data.hasMushrooms = $('#chkMushrooms').is(":checked")
+              data.hasOnions = $('#chkOnions').is(":checked")
+              data.hasBellPeppers = $('#chkBellPeppers').is(":checked")
+              data.hasOlives = $('#chkOlives').is(":checked")
+              data.hasTomatoes = $('#chkTomatoes').is(":checked")
+              data.hasGarlic = $('#chkGarlic').is(":checked")
+              data.hasJalapenos = $('#chkJalapenos').is(":checked")
+              data.hasArtichokes = $('#chkArtichokes').is(":checked")
               var success = function(data){
     						$("#inputs").append("<p> Request Done"+JSON.stringify(data)+"</p>");
     					};
@@ -45,11 +65,46 @@
   Email: <input id = "txtEmail" type="text" name="email" placeholder="keefe@categorize.us"><br/>
   Address:<input id = "txtEmail" type="email" name="email" placeholder="1234 Street City, ST Zip">
  <br/>
-    <p>Pizza toppings (Check all that apply)</p>
-    <input id = "chkCheese" type='checkbox' checked>Cheese
-    <input id = "chkMushrooms" type='checkbox'>Mushrooms
+    <h2>Pizza toppings (Check all that apply)</h2>
+    <ul class="crust">
+    <h2>Pick a Crust</h2>
+    <input id = "chkTraditional" type='checkbox'>Traditional
+    <input id = "chkThin" type='checkbox'>Thin
+    <input id = "chkGlutenFree" type='checkbox'>Gluten-Free
+    </ul>
+    <ul class="sauce">
+    <h2>Pick a Sauce</h2>
+    <input id = "chkClassicRed" type='checkbox'>Classic Red
+    <input id = "chkCreamyGarlicWhite" type='checkbox'>Creamy Garlic White
+    <input id = "chkBbq" type='checkbox'>Bbq
+    </ul>
+    <ul class="cheese">
+    <h2>Pick a Cheese</h2>
+    <input id = "chkExtraCheese" type='checkbox'>Extra Cheese
+    <input id = "chkRegularCheese" type='checkbox'>Regular Cheese
+    <input id = "chkNoCheese" type='checkbox'>No Cheese
+    </ul>
+    <ul class="meat">
+    <h2>Meat Toppings</h2>
     <input id = "chkPepperoni" type='checkbox'>Pepperoni
-    <p>Comments:</br></p>
+    <input id = "chkItalianSausage" type='checkbox'>Italian Sausage
+    <input id = "chkHam" type='checkbox'>Ham
+    <input id = "chkSalami" type='checkbox'>Salami
+    <input id = "chkBeef" type='checkbox'>Beef
+    <input id = "chkBacon" type='checkbox'>Bacon
+    <input id = "chkChicken" type='checkbox'>Chicken
+    <input id = "chkCanadianBacon" type='checkbox'>Canadian Bacon
+    <ul class="meat">
+    <h2>Vegtable Toppings</h2>
+    <input id = "chkMushrooms" type='checkbox'>Mushrooms
+    <input id = "chkOnions" type='checkbox'>Onions
+    <input id = "chkBellPeppers" type='checkbox'>Bell Peppers
+    <input id = "chkOlives" type='checkbox'>Olives
+    <input id = "chkTomatoes" type='checkbox'>Tomatoes
+    <input id = "chkGarlic" type='checkbox'>Garlic
+    <input id = "chkJalapenos" type='checkbox'>Jalapenos
+    <input id = "chkArtichokes" type='checkbox'>Artichokes
+    <h2>Comments:</br></h2>
 	    <textarea id = "txtComments"></textarea>
 	  <p></p>
   <input type="button" value="Submit" id="btnSubmit">
