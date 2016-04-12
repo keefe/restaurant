@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" type="text/css" href="pizza_form.css">
+		<script
+			  src="https://code.jquery.com/jquery-2.2.2.js"
+			  integrity="sha256-4/zUCqiq0kqxhZIyp4G0Gk+AOtCJsY1TA00k5ClsZYE="
+			  crossorigin="anonymous"></script>
+    		<script type="text/javascript">
+    			$(document).ready(function(){
+    				$("#btnSubmit").click(function(){
+    					var data = {};
+    					data.firstName = $("#txtFirstName").val();
+    					data.lastName = $("#txtLastName").val();
+    					data.email = $("#txtEmail").val();
+    					data.userMessage = $("#txtComments").val();
+              data.hasTraditional = $('#chkTraditional').is(":checked")
+              data.hasThin = $('#chkThin').is(":checked")
+              data.hasGlutenFree = $('#chkGlutenFree').is(":checked")
+              data.hasClassicRed = $('#chkClassicRed').is(":checked")
+              data.hasCreamyGarlicWhite = $('#chkCreamyGarlicWhite').is(":checked")
+              data.hasExtraCheese = $('#chkExtraCheese').is(":checked")
+              data.hasRegularCheese = $('#chkRegularCheese').is(":checked")
+              data.hasNoCheese = $('#chkNoCheese').is(":checked")
+              data.hasPepperoni = $('#chkPepperoni').is(":checked")
+              data.hasItalianSausage = $('#chkItalianSausage').is(":checked")
+              data.hasHam = $('#chkHam').is(":checked")
+              data.hasSalami = $('#chkSalami').is(":checked")
+              data.hasBeef = $('#chkBeef').is(":checked")
+              data.hasBacon = $('#chkBacon').is(":checked")
+              data.hasChicken = $('#chkChicken').is(":checked")
+              data.hasCanadianBacon = $('#chkCandianBacon').is(":checked")
+              data.hasMushrooms = $('#chkMushrooms').is(":checked")
+              data.hasOnions = $('#chkOnions').is(":checked")
+              data.hasBellPeppers = $('#chkBellPeppers').is(":checked")
+              data.hasOlives = $('#chkOlives').is(":checked")
+              data.hasTomatoes = $('#chkTomatoes').is(":checked")
+              data.hasGarlic = $('#chkGarlic').is(":checked")
+              data.hasJalapenos = $('#chkJalapenos').is(":checked")
+              data.hasArtichokes = $('#chkArtichokes').is(":checked")
+              var success = function(data){
+    						$("#inputs").append("<p> Request Done"+JSON.stringify(data)+"</p>");
+    					};
+          
+              $.ajax({
+                type: "POST",
+                url: "/pizzaParadise",
+                data: JSON.stringify(data),
+                success: success,
+                dataType: "json",
+                contentType: "application/json"
+              });
+    				});		
+          });
+        </script>
+</head>
+<html>
+<body>
+  <div id="wrapper">
+  <div id="inputs">
+  <div>
+<center>
+  <h1>Order</h1>
+  First name: <input id = "txtFirstName" type="text" name="firstname" placeholder="John"><br/>
+  Last name: <input id = "txtLastName" type="text" name="lastname" placeholder="Smith"><br/>
+  Email: <input id = "txtEmail" type="text" name="email" placeholder="keefe@categorize.us"><br/>
+  Address:<input id = "txtEmail" type="email" name="email" placeholder="1234 Street City, ST Zip">
+ <br/>
+    <h2>Pizza toppings (Check all that apply)</h2>
+    <h2>Pick a Crust</h2>
+    <select id="Crust">
+    <option value="1">Traditional</option>
+    <option value="2">Thin</option>
+    <option value="3">GlutenFree</option>
+    </select>
+
+    <h2>Pick a Sauce</h2>
+    <select id="Sauce">
+    <option value="1">ClassicRed</option>
+    <option value="2">CreamyGarlicWhite</option>
+    <option value="3">Bbq</option>
+    </select>
+
+    <h2>Pick a Cheese</h2>
+    <select id="Cheese">
+    <option value="1">ExtraCheese</option>
+    <option value="2">RegularCheese</option>
+    <option value="3">NoCheese</option>
+    </select>
+  
+    <ul class="meat">
+    <h2>Meat Toppings</h2>
+    <input id = "chkPepperoni" type='checkbox'>Pepperoni
+    <input id = "chkItalianSausage" type='checkbox'>Italian Sausage
+    <input id = "chkHam" type='checkbox'>Ham
+    <input id = "chkSalami" type='checkbox'>Salami
+    <input id = "chkBeef" type='checkbox'>Beef
+    <input id = "chkBacon" type='checkbox'>Bacon
+    <input id = "chkChicken" type='checkbox'>Chicken
+    <input id = "chkCanadianBacon" type='checkbox'>Canadian Bacon
+    <ul class="meat">
+    <h2>Vegtable Toppings</h2>
+    <input id = "chkMushrooms" type='checkbox'>Mushrooms
+    <input id = "chkOnions" type='checkbox'>Onions
+    <input id = "chkBellPeppers" type='checkbox'>Bell Peppers
+    <input id = "chkOlives" type='checkbox'>Olives
+    <input id = "chkTomatoes" type='checkbox'>Tomatoes
+    <input id = "chkGarlic" type='checkbox'>Garlic
+    <input id = "chkJalapenos" type='checkbox'>Jalapenos
+    <input id = "chkArtichokes" type='checkbox'>Artichokes
+    <h2>Comments:</br></h2>
+	    <textarea id = "txtComments"></textarea>
+	  <p></p>
+  <input type="button" value="Submit" id="btnSubmit">
+</div>
+</div>
+</body>
+</html>
