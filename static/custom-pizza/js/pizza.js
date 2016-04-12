@@ -16,6 +16,18 @@
      };
      $("#btnOrder").click(function(){
         console.log("Send " + JSON.stringify(order) + " to the server");
+        var success = function(data){
+            $("#inputs").append("<p> Request Done"+JSON.stringify(data)+"</p>");
+        };
+          
+          $.ajax({
+            type: "POST",
+            url: "/pizzaParadise",
+            data: JSON.stringify(order),
+            success: success,
+            dataType: "json",
+            contentType: "application/json"
+          });
      });
 
    	$('.btn-pepperonni').on('click', function(event) {
