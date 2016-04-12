@@ -14,6 +14,7 @@
     					data.email = $("#txtEmail").val();
     					data.userMessage = $("#txtComments").val();
               data.hasTraditional = $('#chkTraditional').is(":checked")
+              order.Crust = $( "#Crust option:selected" ).val() 
               data.hasThin = $('#chkThin').is(":checked")
               data.hasGlutenFree = $('#chkGlutenFree').is(":checked")
               data.hasClassicRed = $('#chkClassicRed').is(":checked")
@@ -68,23 +69,23 @@
     <h2>Pizza toppings (Check all that apply)</h2>
     <h2>Pick a Crust</h2>
     <select id="Crust">
-    <option value="1">Traditional</option>
-    <option value="2">Thin</option>
-    <option value="3">GlutenFree</option>
+    <option value="traditional">Traditional</option>
+    <option value="thin">Thin</option>
+    <option value="noGluten">GlutenFree</option>
     </select>
 
     <h2>Pick a Sauce</h2>
     <select id="Sauce">
-    <option value="1">ClassicRed</option>
-    <option value="2">CreamyGarlicWhite</option>
-    <option value="3">Bbq</option>
+    <option value="classicRed">Classic Red</option>
+    <option value="creamyGarlicWhite">Creamy Garlic White</option>
+    <option value="Bbq">Bbq</option>
     </select>
 
     <h2>Pick a Cheese</h2>
     <select id="Cheese">
-    <option value="1">ExtraCheese</option>
-    <option value="2">RegularCheese</option>
-    <option value="3">NoCheese</option>
+    <option value="extraCheese">ExtraCheese</option>
+    <option value="regularCheese">RegularCheese</option>
+    <option value="noCheese">NoCheese</option>
     </select>
   
     <ul class="meat">
