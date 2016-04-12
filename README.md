@@ -7,6 +7,7 @@ Project: Basic API Hosting with Amazon Web Services
 Amazon Web Services offers the most powerful set of services for cloud hosting, having originated the field in the early 2000s. Today, their very generous free tier lets you setup a full stack without paying any money upfront. Static website hosting is handled through S3. API endpoints are created visually using API Gateway and HTTP methods are mapped to Lambda functions, which can execute arbitrary code including access the free NoSQL database DynamoDB. By following these steps, you will give yourself the ability to very quickly prototype any website including a backend suitable for writing mobile applications. The key to learning to write modern web applications is to be able to run a whole stack and quickly make changes. 
 
 1. Signup for Amazon Web Services Free Tier 
+
 See details at aws.amazon.com/free They do require a valid credit card unless you exceed free tier usage (you won't any time soon).
 If someone is concerned about this and willing to try with a prepaid credit card (greendot etc), please leave a comment about whether that works!
 Once you are done, bookmark the console https://console.aws.amazon.com
