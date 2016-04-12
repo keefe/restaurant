@@ -8,11 +8,11 @@
      var saucePrice = 3;
      var crustPrice = 5;
      var order = {
-        pepperoni:false,
-        greenPeppers:false,
-        mushrooms:false,
-        glutenFree:false,
-        garlicSauce:false
+        hasPepperoni:false,
+        hasBellPeppers:false,
+        hasMushrooms:false,
+        hasGlutenFree:false,
+        hasCreamyGarlicWhite:false
      };
      $("#btnOrder").click(function(){
         console.log("Send " + JSON.stringify(order) + " to the server");
@@ -20,7 +20,7 @@
 
    	$('.btn-pepperonni').on('click', function(event) {
         event.preventDefault();
-        order.pepperoni = !order.pepperoni;
+        order.hasPepperoni = !order.hasPepperoni;
         $('.btn-pepperonni').toggleClass('active');
         $('.pep').fadeToggle(1000);
         $('strong').empty();
@@ -38,7 +38,7 @@
 
     $('.btn-green-peppers').on('click', function(event) {
         event.preventDefault();
-        order.greenPeppers = !order.greenPeppers;
+        order.hasBellPeppers = !order.hasBellPeppers;
         $('.btn-green-peppers').toggleClass('active');        
         $('.green-pepper').fadeToggle(1000);
         $('strong').empty();
@@ -57,7 +57,7 @@
 
     $('.btn-mushrooms').on('click', function(event) {
         event.preventDefault();
-        order.mushrooms = !order.mushrooms;
+        order.hasMushrooms = !order.hasMushrooms;
 
         $('.btn-mushrooms').toggleClass('active');        
         $('.mushroom').fadeToggle(1000);
@@ -77,7 +77,7 @@
 
     $('.btn-crust').on('click', function(event) {
         event.preventDefault();
-        order.glutenFree = !order.gluenFree;
+        order.hasGlutenFree = !order.hasGlutenFree;
         $('.btn-crust').toggleClass('active');        
         $('.crust').toggleClass('crust-gluten-free');
         $('strong').empty();
@@ -96,7 +96,7 @@
 
      $('.btn-sauce').on('click', function(event) {
         event.preventDefault();
-        order.garlicSauce = !order.garlicSauce;
+        order.hasCreamyGarlicWhite = !order.hasCreamyGarlicWhite;
         $('.btn-sauce').toggleClass('active');
         $('.sauce').toggleClass('sauce-white');
         $('strong').empty();
