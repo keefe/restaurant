@@ -16,23 +16,14 @@ module.exports = function(event, context) {
           userMessage:{
               S:"Test Message"
           },
-          drpTraditional:{
-             S:"Traditional"
+          Crust:{
+             S:"default"
           },
-          hasClassicRed:{
-            BOOL:false
+          Sauce:{
+             S:"default"
           },
-          hasCreamyGarlicWhite:{
-            BOOL:false
-          },
-          hasExtraCheese:{
-            BOOL:false
-          },
-          hasRegularCheese:{
-            BOOL:false
-          },
-          hasNoCheese:{
-            BOOL:false
+          Cheese:{
+             S:"default"
           },
           hasPepperoni:{
             BOOL:false
