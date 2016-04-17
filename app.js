@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var contactHandler = require('./handlers/contact_form')
 var pizzaParadise = require('./handlers/pizza_paradise')
 var helloHandler = require('./handlers/hello')
+var contactListHandler = require('./handlers/contactlist');
 
 var app = express();
 app.use(bodyParser.json());
@@ -33,6 +34,16 @@ app.post('/dynamo', function(req, res){
   context = new ContextProxy(req, res);
   contactHandler(req.body, context);
 });
+
+
+app.get('/contacts', function(req, res){
+  console.log("Inside Contacts")
+  console.log(req.body);
+  context = new ContextProxy(req, res);
+  contactListHandler(req.body, context);
+});
+
+
 app.post('/pizzaParadise', function(req, res){
   console.log("Inside Dynamo")
   console.log(req.body);
