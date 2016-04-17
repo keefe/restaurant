@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script
+			  src="https://code.jquery.com/jquery-2.2.2.js"
+			  integrity="sha256-4/zUCqiq0kqxhZIyp4G0Gk+AOtCJsY1TA00k5ClsZYE="
+			  crossorigin="anonymous"></script>
+		<script type="text/javascript">
+        $(document).ready(function(){
+          var addIf = function(source, item){
+            if(item && item.S){
+              source = source + ' ' + item.S;
+            }
+            return source;
+          }
+          var success = function(data){
+            console.log(data);
+            for(var item of data.Items){
+              var newLine = "<p>";
+              newLine = addIf(newLine, item.email);
+              newLine = addIf(newLine, item.firstName);
+              newLine = addIf(newLine, item.lastName);
+              newLine = addIf(newLine, item.userMessage);
+              
+              
+              newLine = newLine + "</p>";
+              $("#results").append(newLine);
+            }
+						//$("#results").append("<p>"+data.Hello+"</p>");
+					};
+          
+          $.ajax({
+            type: "GET",
+            url: "/contacts",
+            success: success,
+            dataType: "json",
+            contentType: "application/json"
+          });
+        });
+    </script>
+  </head>
+  <body>
+      <div id = "results">
+  </body>
+</html>
