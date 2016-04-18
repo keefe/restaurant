@@ -80,6 +80,9 @@ module.exports = function(event, context) {
     if(event.lastName!==undefined && event.lastName !=='') newItem.Item.lastName.S = event.lastName;
     if(event.email!==undefined && event.email!=='') newItem.Item.cust_data.S = event.email;
     if(event.userMessage!==undefined && event.userMessage!=='') newItem.Item.userMessage.S = event.userMessage;
+    if(event.Crust!==undefined && event.Crust !=='') newItem.Item.Crust.S = event.Crust;
+    if(event.Sauce!==undefined && event.Sauce !=='') newItem.Item.Sauce.S = event.Sauce;
+    if(event.Cheese!==undefined && event.Cheese !=='') newItem.Item.Cheese.S = event.Cheese;
     if(event.hasTraditional!==undefined && event.hasTraditional !=='') newItem.Item.hasTraditional.BOOL = event.hasTraditional;
     if(event.hasThin!==undefined && event.hasThin !=='') newItem.Item.hasThin.BOOL = event.hasThin;
     if(event.hasGlutenFree!==undefined && event.hasGlutenFree !=='') newItem.Item.hasGlutenFree.BOOL = event.hasGlutenFree;
