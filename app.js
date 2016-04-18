@@ -2,6 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var contactHandler = require('./handlers/contact_form')
 var pizzaParadise = require('./handlers/pizza_paradise')
+var dropdownPizzaParadise = require('./handlers/dropdown_pizza_paradise')
 var helloHandler = require('./handlers/hello')
 
 var app = express();
@@ -38,6 +39,13 @@ app.post('/pizzaParadise', function(req, res){
   console.log(req.body);
   context = new ContextProxy(req, res);
   pizzaParadise(req.body, context);
+});
+
+app.post('/dropdownPizzaParadise', function(req, res){
+  console.log("Inside Dynamo")
+  console.log(req.body);
+  context = new ContextProxy(req, res);
+  dropdownPizzaParadise(req.body, context);
 });
 
 app.post('/testing', function(req, res){

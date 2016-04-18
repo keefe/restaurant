@@ -83,14 +83,13 @@ module.exports = function(event, context) {
     if(event.Crust!==undefined && event.Crust !=='') newItem.Item.Crust.S = event.Crust;
     if(event.Sauce!==undefined && event.Sauce !=='') newItem.Item.Sauce.S = event.Sauce;
     if(event.Cheese!==undefined && event.Cheese !=='') newItem.Item.Cheese.S = event.Cheese;
-    if(event.hasTraditional!==undefined && event.hasTraditional !=='') newItem.Item.hasTraditional.BOOL = event.hasTraditional;
-    if(event.hasThin!==undefined && event.hasThin !=='') newItem.Item.hasThin.BOOL = event.hasThin;
-    if(event.hasGlutenFree!==undefined && event.hasGlutenFree !=='') newItem.Item.hasGlutenFree.BOOL = event.hasGlutenFree;
-    if(event.hasClassicRed!==undefined && event.hasClassicRed !=='') newItem.Item.hasClassicRed.BOOL = event.hasClassicRed;
-    if(event.hasCreamyGarlicWhite!==undefined && event.hasCreamyGarlicWhite !=='') newItem.Item.hasCreamyGarlicWhite.BOOL = event.hasCreamyGarlicWhite;
-    if(event.hasExtraCheese!==undefined && event.hasExtraCheese !=='') newItem.Item.hasExtraCheese.BOOL = event.hasExtraCheese;
-    if(event.hasRegularCheese!==undefined && event.hasRegularCheese !=='') newItem.Item.hasRegularCheese.BOOL = event.hasRegularCheese;
-    if(event.hasNoCheese!==undefined && event.hasNoCheese !=='') newItem.Item.hasNoCheese.BOOL = event.hasNoCheese;
+    //if(event.hasThin!==undefined && event.hasThin !=='') newItem.Item.hasThin.BOOL = event.hasThin;
+    //if(event.hasGlutenFree!==undefined && event.hasGlutenFree !=='') newItem.Item.hasGlutenFree.BOOL = event.hasGlutenFree;
+    //if(event.hasClassicRed!==undefined && event.hasClassicRed !=='') newItem.Item.hasClassicRed.BOOL = event.hasClassicRed;
+    //if(event.hasCreamyGarlicWhite!==undefined && event.hasCreamyGarlicWhite !=='') newItem.Item.hasCreamyGarlicWhite.BOOL = event.hasCreamyGarlicWhite;
+    //if(event.hasExtraCheese!==undefined && event.hasExtraCheese !=='') newItem.Item.hasExtraCheese.BOOL = event.hasExtraCheese;
+    //if(event.hasRegularCheese!==undefined && event.hasRegularCheese !=='') newItem.Item.hasRegularCheese.BOOL = event.hasRegularCheese;
+    //if(event.hasNoCheese!==undefined && event.hasNoCheese !=='') newItem.Item.hasNoCheese.BOOL = event.hasNoCheese;
     if(event.hasPepperoni!==undefined && event.hasPepperoni !=='') newItem.Item.hasPepperoni.BOOL = event.hasPepperoni;
     if(event.hasItalianSausage!==undefined && event.hasItalianSausage !=='') newItem.Item.hasItalianSausage.BOOL = event.hasItalianSausage;
     if(event.hasHam!==undefined && event.hasHam !=='') newItem.Item.hasHam.BOOL = event.hasHam;
@@ -108,6 +107,7 @@ module.exports = function(event, context) {
     if(event.hasJalapenos!==undefined && event.hasJalapenos !=='') newItem.Item.hasJalapenos.BOOL = event.hasJalapenos;
     if(event.hasArtichokes!==undefined && event.hasArtichokes !=='') newItem.Item.hasArtichokes.BOOL = event.hasArtichokes;
     var dynamo = new AWS.DynamoDB({apiVersion: '2012-08-10'});
+    console.log(newItem);
     dynamo.putItem(newItem, function(err, data){
        if(err){
            console.log(err, err.stack);
