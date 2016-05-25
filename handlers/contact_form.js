@@ -2,7 +2,7 @@ var AWS = require('aws-sdk');
 AWS.config.update({region:'us-west-2'});
 
 module.exports = function(event, context) {
-    var newItem = {"": [
+    var newItem = {"Item": [
         {"email": "keefe@categorize.us"},
         {"firstName": "keefe"},
         {"lastName": "roedershiemer"},
