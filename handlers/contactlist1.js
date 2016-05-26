@@ -24,7 +24,19 @@ module.exports = function(event, context) {
     }else {
       console.log("Query is complete");
       console.log(data);           // successful response
-      context.done(null, data);
+      //TODO check the syntax of the following, but approximately
+      var niceResults = [];
+      for(item in data.Items){
+        var formattedItem = {
+          email:"defaultEmail",
+          firstName:"defaultFirstName"
+        };
+        if(item.email.S!==undefined && item.email.S!=='') formattedItem.email = item.email.S;
+        niceResults.push(formattedItem);
+        
+      }
+      
+      context.done(null, data);//change this to return the new array
     }    
   });
 }
