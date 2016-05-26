@@ -32,6 +32,9 @@ module.exports = function(event, context) {
           firstName:"defaultFirstName"
         };
         if(item.email.S!==undefined && item.email.S!=='') formattedItem.email = item.email.S;
+        //TODO is the following line correct or the one before?
+        //if(item.Item.email.S!==undefined && item.Item.email.S!=='') formattedItem.email = item.Item.email.S;
+
         niceResults.push(formattedItem);
         
       }
